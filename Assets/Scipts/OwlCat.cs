@@ -30,10 +30,7 @@ public class OwlCat : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-        CheckGround();
-        CheckGraple();
-        UpdateColor();
-
+        
         var control = Input.GetAxis("Horizontal");
 
         speed = Math.Abs(control * runSpeed);
@@ -93,6 +90,10 @@ public class OwlCat : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+        CheckGround();
+        CheckGraple();
+        UpdateColor();
+
         var jumpButton = Input.GetKeyDown(KeyCode.Space);
         if(jumpButton && CanJump()){
             var rb = GetComponent<Rigidbody2D>();
